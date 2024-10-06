@@ -2,17 +2,32 @@ function sayHello(){
     console.log('hello you!')
 }
 
-//more advanced function
 function addVat(price){
-    let total = price*1.2
-    if (total>145){
-        throw new Error('error tossed!!!')
-    } else {
-        console.log(total)
-        return total
-    }
+    return new Promise((resolve, reject) => {
+        let total = price*1.2
+
+            if (total>145){
+                reject('error message bruh!')
+            } else {
+                console.log(total)
+                resolve(total)
+            }
+
+    })
 
 }
+
+//more advanced function
+//function addVat(price){
+//    let total = price*1.2
+//    if (total>145){
+//        throw new Error('error tossed!!!')
+//    } else {
+//        console.log(total)
+//        return total
+//    }
+//
+//}
 
 //simple function
 module.exports = {
